@@ -3,17 +3,20 @@ import axios from 'axios'
 import { Link } from 'react-router-dom'
 const Posts=(props)=>{
     const{id}=props.match.params
-const[post,setPost]=useState([])
-useEffect(()=>{
-   axios.get(`https://jsonplaceholder.typicode.com/posts`)
-   .then((responce)=>{
-       const result=responce.data
-       setPost(result)
-   }) 
-},[])
+    const[post,setPost]=useState([])
+    useEffect(()=>{
+    axios.get(`https://jsonplaceholder.typicode.com/posts`)
+    .then((responce)=>{
+        const result=responce.data
+        setPost(result)
+    }) 
+    },[])
+    
     return(
         <div>
-            <h1>Total Posts:{post.length}</h1>
+            <div class="card">
+            <h5 class="card-header">Total Posts:{post.length}</h5>
+            <div class="card-body">
             <ul>
             {
                 post.map((ele)=>{
@@ -21,7 +24,9 @@ useEffect(()=>{
                 })
             }
             </ul>
-        </div>
+            </div>
+</div>  
+ </div>
     )
 }
 

@@ -1,8 +1,9 @@
 import React from 'react'
+import './style/App.css'
 
 const Home =(props)=>{
     return (<div>
-        <h1>Home Page</h1>
+        <img src="home.webp" className="image" />
     </div>)
 }
 

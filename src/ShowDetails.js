@@ -38,14 +38,16 @@ useEffect(()=>{
 
 
     return(
+        
         <div>
-            <h2>USER NAME:{user.name} </h2>
-            <h2>TITLE:{post.title} </h2>
-            <h3>BODY:</h3>
-            <h3>{post.body} </h3>
-            <hr/>
-            <h1>Comments</h1>
-            <ul>
+            <div class="card">
+  <h5 class="card-header">Author:{user.name}</h5>
+  <div class="card-body">
+    <h5 class="card-title">Title: {post.title} </h5>
+    <h4>Body : {post.body}</h4>
+    <hr/>
+    <h3>Comments :</h3>
+    <ul>
             {
                 comments.map((ele)=>{
                     return <li key={ele.id}>{ele.body} </li>
@@ -54,7 +56,10 @@ useEffect(()=>{
             </ul>
             <hr/>
         <Link to={`/users/${id}`}>More posts of author:{user.name}</Link>
-        </div>
+    
+  </div>
+</div>
+ </div>
     )
 }
 

@@ -17,6 +17,7 @@ useEffect(()=>{
         alert(err.message)
     })
 },[])
+
 useEffect(()=>{
     axios.get(`https://jsonplaceholder.typicode.com/posts?userId=${id}`)
     .then((response)=>{
@@ -27,17 +28,23 @@ useEffect(()=>{
         alert(err.message)
     })
 },[])
-    return(
+    
+return(
         <div>
-            <h1>USER NAME:{user.name}</h1>
-            <h2>POSTS WRITTEN BY USER</h2>
-            <ul>
+            <div class="card"  style={{width: "30rem",position:'absolute',left:"700px",top:"160px"}}>
+  <h5 class="card-header">Author: {user.name}</h5>
+  <div class="card-body">
+    <h5 class="card-title">Post written by user :</h5>
+    <ul>
                 {
                     posts.map((ele)=>{
                         return <li key={ele.id}><Link to={`/posts/${id}`}>{ele.title} </Link> </li>
                     })
                 }
             </ul>
+  </div>
+</div>
+            
         </div>
     )
 

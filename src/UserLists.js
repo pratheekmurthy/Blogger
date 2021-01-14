@@ -13,8 +13,10 @@ const UsersList=(props)=>{
     })
     },[])
     return(
-        <div>
-            <h1>UsersList-{users.length}</h1>
+        <div style={{width: "35rem",backgroundColor : "#bfff00"}}>
+            <div class="card" style={{width: "35rem"}}>
+            <h5 class="card-header">Total Users-{users.length}</h5>
+            <div class="card-body">
             <ul>
                 {
                     users.map((ele)=>{
@@ -22,6 +24,8 @@ const UsersList=(props)=>{
                     })
                 }
             </ul>
+            </div>
+            </div>   
         </div>
     )
 }
